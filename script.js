@@ -8,12 +8,12 @@ javascript: (() => {
             var premiumDrawTicket = 0;
 
             res[0].forEach(element => {
-                switch (element.id) {
-                    case 20010:
+                switch (element.item_id) {
+                    case "20010":
                         premium10PartTicket = parseInt(element.number);
                         break;
 
-                    case 20011:
+                    case "20011":
                         premiumDrawTicket = parseInt(element.number);
                         break;
 
@@ -22,7 +22,8 @@ javascript: (() => {
                 }
             });
             const spark = 300;
-            const totalCrystalDraw = crystal / spark;
+            const crystalPerdraw = 300;
+            const totalCrystalDraw = crystal / crystalPerdraw;
             const totalDraw = totalCrystalDraw + (premium10PartTicket * 10) + premiumDrawTicket;
             alert('Total draw: ' + parseInt(totalDraw) + ' / ' + spark + '\nComplete: ' + parseInt((totalDraw / spark) * 100) + '%');
         }
